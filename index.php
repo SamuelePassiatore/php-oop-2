@@ -14,26 +14,29 @@ require_once __DIR__ . '/data.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous' />
+    <link rel="stylesheet" href="./style/style.css">
     <title>OOP E-commerce</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
+        <header class="text-center pt-3">
             <h1>E-Commerce Animals</h1>
         </header>
-        <main>
-            <div class="container my-5">
+        <main class="my-2">
+            <div class="container">
                 <div class="row row-cols-4">
                     <?php foreach ($products as $product) : ?>
                         <div class="col p-3">
                             <div class="card h-100 p-2">
                                 <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
                                 <div class="card-body">
-                                    <h3><?= $product->title ?></h3>
-                                    <p><?= $product->categories->name ?></p>
-                                    <p><?= $product->price ?></p>
-                                    <p class="card-text"> <?= $product->type ?></p>
+                                    <h3 class="pb-3"><?= $product->title ?></h3>
+                                    <div>
+                                        <div class="pb-2"><strong>Categoria: </strong><?= $product->categories->name ?></div>
+                                        <div class="pb-2"><strong>Prezzo: </strong> <?= $product->getFormattedPrice() ?></div>
+                                        <div class="card-text"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
