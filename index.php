@@ -2,6 +2,7 @@
 include_once __DIR__ . '/models/Product.php';
 include_once __DIR__ . '/models/Category.php';
 require_once __DIR__ . '/models/Food.php';
+require_once __DIR__ . '/models/Game.php';
 require_once __DIR__ . '/data.php';
 ?>
 
@@ -38,8 +39,12 @@ require_once __DIR__ . '/data.php';
                                         <div class="pb-2"><strong>Prezzo: </strong> <?= $product->getFormattedPrice() ?></div>
                                         <div class="card-text pb-2"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
                                         <?php if ($product instanceof Food) : ?>
-                                            <div class="card-text pb-2"><strong>Sapore: </strong><?= $product->flavour ?></div>
+                                            <div class="card-text pb-2"><strong>Gusto: </strong><?= $product->flavour ?></div>
                                             <div class="card-text"><strong>Scadenza: </strong><?= $product->expiration ?></div>
+                                        <?php endif; ?>
+                                        <?php if ($product instanceof Game) : ?>
+                                            <div class="card-text pb-2"><strong>Materiale: </strong><?= $product->material ?></div>
+                                            <div class="card-text"><strong>Colore: </strong><?= $product->color ?></div>
                                         <?php endif; ?>
                                     </div>
                                 </div>
