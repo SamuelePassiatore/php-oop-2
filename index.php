@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/models/Product.php';
 include_once __DIR__ . '/models/Category.php';
+require_once __DIR__ . '/data.php';
 ?>
 
 
@@ -17,7 +18,30 @@ include_once __DIR__ . '/models/Category.php';
 </head>
 
 <body>
-
+    <div class="container">
+        <header>
+            <h1>E-Commerce Animals</h1>
+        </header>
+        <main>
+            <div class="container my-5">
+                <div class="row row-cols-4">
+                    <?php foreach ($products as $product) : ?>
+                        <div class="col p-3">
+                            <div class="card h-100 p-2">
+                                <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
+                                <div class="card-body">
+                                    <h3><?= $product->title ?></h3>
+                                    <p><?= $product->categories->name ?></p>
+                                    <p><?= $product->price ?></p>
+                                    <p class="card-text"> <?= $product->type ?></p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
 
 </html>
