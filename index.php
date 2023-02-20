@@ -1,8 +1,5 @@
 <?php
 include_once __DIR__ . '/models/Product.php';
-include_once __DIR__ . '/models/Category.php';
-require_once __DIR__ . '/models/Food.php';
-require_once __DIR__ . '/models/Game.php';
 require_once __DIR__ . '/data.php';
 ?>
 
@@ -45,6 +42,10 @@ require_once __DIR__ . '/data.php';
                                         <?php if ($product instanceof Game) : ?>
                                             <div class="card-text pb-2"><strong>Materiale: </strong><?= $product->material ?></div>
                                             <div class="card-text"><strong>Colore: </strong><?= $product->color ?></div>
+                                        <?php endif; ?>
+                                        <?php if ($product instanceof House) : ?>
+                                            <div class="card-text pb-2"><strong>Materiale: </strong><?= $product->material ?></div>
+                                            <div class="card-text"><strong>Dimensioni: </strong><?= $product->dimensions ?></div>
                                         <?php endif; ?>
                                     </div>
                                 </div>

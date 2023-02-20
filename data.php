@@ -1,5 +1,8 @@
 <?php
-
+require_once __DIR__ . '/models/Category.php';
+require_once __DIR__ . '/models/Food.php';
+require_once __DIR__ . '/models/Game.php';
+require_once __DIR__ . '/models/House.php';
 //Categories
 $cat = new Category('Gatti');
 $dog = new Category('Cani');
@@ -9,6 +12,6 @@ $cat_food = new Food('https://imgs.search.brave.com/BU7y9vbm1O3PDyfolgiSE-S1JW5E
 $dog_food = new Food('https://imgs.search.brave.com/0D5NkvZR0Wezg1p5BP0rCgJtWMWMgAqQxaP3CggbpHQ/rs:fit:950:950:1/g:ce/aHR0cDovL3d3dy5p/bnRlcmZvb2QuY2gv/X0NNUy9yZXBvc2l0/b3J5L05vcm1hbC8x/NDUtY2lib3VtaWRv/QmVsY2FuZG90YWNj/aGluby5qcGc', 'Carne per cani', 2.50, $dog, 'Cibo', 'Manzo', '25/05/2025');
 $cat_game = new Game('https://imgs.search.brave.com/SXd5Y4CLD6gcBQH_-dEIpMq1AQbqYyIvM5e0LdYn97E/rs:fit:691:700:1/g:ce/aHR0cHM6Ly9zdGF0/aWMuem9vbWFsaWEu/Y29tL3Byb2RfaW1n/LzM5MDA5L2xtXzU1/YjUzYjNhM2Q2YWI5/MGNlMDI2ODIyOTE1/MWM5YmRlMTExNTE0/NDc5OTU2LmpwZw', 'Gioco per gatti', 8.99, $cat, 'Gioco', 'Plastica', 'Grigio');
 $dog_game = new Game('https://imgs.search.brave.com/IJDdODH60wk25UOdqPfGh42IK1_b-m-2vASyrvbgNq0/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93d3cu/cmV2aWV3Ym94Lml0/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE5/LzEwL2p1Z3VldGVz/cGFyYXBlcnJvcy1o/ZWFkZXIuanBn', 'Gioco per cani', 6, $dog, 'Gioco', 'Gomma', 'Rosso');
-$cat_house = new Product('https://imgs.search.brave.com/yYS5cTnUZT5qJY52gd6I3_wbsYBZfYiJsJVM0xeJr00/rs:fit:686:705:1/g:ce/aHR0cHM6Ly93d3cu/bWljaW9nYXR0by5p/dC9uZXcvd3AtY29u/dGVudC91cGxvYWRz/LzIwMTcvMTIvY3Vj/Y2lhLXBlci1nYXR0/aS1sZW9uZS02ODZ4/NzA1LmpwZw', 'Cuccia per gatti', 19.50, $cat, 'Casa');
-$dog_house = new Product('https://imgs.search.brave.com/kvbsBOiB3RR0j-sr8zYyNDbVwqHQes9J2vbxts58fp4/rs:fit:1200:1200:1/g:ce/aHR0cDovL2Nvc2Vw/ZXJsYWNhc2EubmV0/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE2/LzA4L2N1Y2NpYS1j/YW5lLmpwZw', 'Cuccia per cani', 35, $dog, 'Casa');
+$cat_house = new House('https://imgs.search.brave.com/yYS5cTnUZT5qJY52gd6I3_wbsYBZfYiJsJVM0xeJr00/rs:fit:686:705:1/g:ce/aHR0cHM6Ly93d3cu/bWljaW9nYXR0by5p/dC9uZXcvd3AtY29u/dGVudC91cGxvYWRz/LzIwMTcvMTIvY3Vj/Y2lhLXBlci1nYXR0/aS1sZW9uZS02ODZ4/NzA1LmpwZw', 'Cuccia per gatti', 19.50, $cat, 'Casa', 'Lana', '38 x 38 x 40');
+$dog_house = new House('https://imgs.search.brave.com/kvbsBOiB3RR0j-sr8zYyNDbVwqHQes9J2vbxts58fp4/rs:fit:1200:1200:1/g:ce/aHR0cDovL2Nvc2Vw/ZXJsYWNhc2EubmV0/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE2/LzA4L2N1Y2NpYS1j/YW5lLmpwZw', 'Cuccia per cani', 35, $dog, 'Casa', 'Legno', '78 x 84 x 85');
 $products = [$cat_food, $dog_food, $cat_game, $dog_game, $cat_house, $dog_house];
