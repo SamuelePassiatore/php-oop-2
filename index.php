@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/models/Product.php';
 include_once __DIR__ . '/models/Category.php';
+require_once __DIR__ . '/models/Food.php';
 require_once __DIR__ . '/data.php';
 ?>
 
@@ -35,7 +36,11 @@ require_once __DIR__ . '/data.php';
                                     <div>
                                         <div class="pb-2"><strong>Categoria: </strong><?= $product->categories->name ?></div>
                                         <div class="pb-2"><strong>Prezzo: </strong> <?= $product->getFormattedPrice() ?></div>
-                                        <div class="card-text"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
+                                        <div class="card-text pb-2"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
+                                        <?php if ($product instanceof Food) : ?>
+                                            <div class="card-text pb-2"><strong>Sapore: </strong><?= $product->flavour ?></div>
+                                            <div class="card-text"><strong>Scadenza: </strong><?= $product->expiration ?></div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
