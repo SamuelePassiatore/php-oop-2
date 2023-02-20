@@ -32,7 +32,7 @@ require_once __DIR__ . '/data.php';
                                 <div class="card-body">
                                     <h3 class="pb-3"><?= $product->title ?></h3>
                                     <div>
-                                        <div class="pb-2"><strong>Categoria: </strong><?= $product->categories->name ?></div>
+                                        <div class="pb-2"><strong>Categoria: </strong><?= $product->categories->getName() ?></div>
                                         <div class="pb-2"><strong>Prezzo: </strong> <?= $product->getFormattedPrice() ?></div>
                                         <div class="card-text pb-2"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
                                         <?php if ($product instanceof Food) : ?>
