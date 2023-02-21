@@ -16,7 +16,17 @@ class Product
     {
         $this->image = $image;
         $this->title = $title;
-        $this->price = $price;
+        // Try and catch with exception
+        try {
+            if ($price < 0) {
+                throw new Exception("Prezzo $title non valido: € $price");
+            }
+            $this->price = $price;
+        } catch (Exception $e) {
+            echo 'Eccezione: ',  $e->getMessage();
+            die();
+        }
+
         $this->categories = $categories;
         $this->type = $type;
     }
