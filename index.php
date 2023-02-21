@@ -27,7 +27,7 @@ require_once __DIR__ . '/data.php';
                 <div class="row row-cols-4">
                     <?php foreach ($products as $product) : ?>
                         <div class="col p-3">
-                            <div class="card h-100 p-2">
+                            <div class="card h-100 p-3">
                                 <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
                                 <div class="card-body">
                                     <h3 class="pb-3"><?= $product->title ?></h3>

@@ -5,7 +5,7 @@ class Product
     //!Properties or istance variables
     public $image;
     public $title;
-    public $price;
+    private $price;
     public $categories;
     public $type;
 
