@@ -1,8 +1,10 @@
 <?php
 require_once __DIR__ . '/Category.php';
+require_once __DIR__ . '../../traits/Shipping.php';
 class Product
 {
     //!Properties or istance variables
+    use Shipping;
     public $image;
     public $title;
     private $price;

@@ -6,9 +6,9 @@ trait Shipping
     private $shippingCost;
 
     // Setter method for shipping courier
-    public function setShippingCourier($courier)
+    public function setShippingCourier($shippingCourier)
     {
-        $this->shippingCourier = $courier;
+        $this->shippingCourier = $shippingCourier;
     }
 
     //Getter method for shipping courier
@@ -18,9 +18,9 @@ trait Shipping
     }
 
     //Setter method for shipping cost
-    public function setShippingCost($cost)
+    public function setShippingCost($shippingCost)
     {
-        $this->shippingCost = $cost;
+        $this->shippingCost = $shippingCost;
     }
 
     //Getter method for shipping cost

@@ -1,6 +1,7 @@
 <?php
 include_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/data.php';
+
 ?>
 
 
@@ -42,16 +43,19 @@ require_once __DIR__ . '/data.php';
                                         <!-- Conditionals -->
                                         <?php if ($product instanceof Food) : ?>
                                             <div class="card-text pb-2"><strong>Gusto: </strong><?= $product->flavour ?></div>
-                                            <div class="card-text"><strong>Scadenza: </strong><?= $product->expiration ?></div>
+                                            <div class="card-text pb-2"><strong>Scadenza: </strong><?= $product->expiration ?></div>
                                         <?php endif; ?>
                                         <?php if ($product instanceof Game) : ?>
                                             <div class="card-text pb-2"><strong>Materiale: </strong><?= $product->material ?></div>
-                                            <div class="card-text"><strong>Colore: </strong><?= $product->color ?></div>
+                                            <div class="card-text pb-2"><strong>Colore: </strong><?= $product->color ?></div>
                                         <?php endif; ?>
                                         <?php if ($product instanceof House) : ?>
                                             <div class="card-text pb-2"><strong>Materiale: </strong><?= $product->material ?></div>
-                                            <div class="card-text"><strong>Dimensioni: </strong><?= $product->dimensions ?></div>
+                                            <div class="card-text pb-2"><strong>Dimensioni: </strong><?= $product->dimensions ?></div>
                                         <?php endif; ?>
+                                        <!-- Proprietà del trait Shipping -->
+                                        <div class="card-text pb-2"><strong>Corriere: </strong><?= $product->getShippingCourier() ?></div>
+                                        <div class="card-text"><strong>Costo spedizione: </strong><?= $product->getShippingCost() ?></div>
                                     </div>
                                 </div>
                             </div>
