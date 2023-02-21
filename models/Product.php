@@ -19,6 +19,7 @@ class Product
         $this->type = $type;
     }
 
+    // Function formatted price with euro 
     public function getFormattedPrice()
     {
         return "€ " . number_format($this->price, 2);

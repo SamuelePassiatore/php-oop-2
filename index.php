@@ -19,15 +19,19 @@ require_once __DIR__ . '/data.php';
 
 <body>
     <div class="container">
+        <!-- Title -->
         <header class="text-center pt-3">
             <h1>E-Commerce Animals</h1>
         </header>
         <main class="my-2">
             <div class="container">
                 <div class="row row-cols-4">
+                    <!-- Cicle array products -->
                     <?php foreach ($products as $product) : ?>
                         <div class="col p-3">
+                            <!-- Card -->
                             <div class="card h-100 p-3">
+                                <!-- Img -->
                                 <img src="<?= $product->image ?>" class="card-img-top" alt="<?= $product->title ?>">
                                 <div class="card-body">
                                     <h3 class="pb-3"><?= $product->title ?></h3>
@@ -35,6 +39,7 @@ require_once __DIR__ . '/data.php';
                                         <div class="pb-2"><strong>Categoria: </strong><?= $product->categories->getName() ?></div>
                                         <div class="pb-2"><strong>Prezzo: </strong> <?= $product->getFormattedPrice() ?></div>
                                         <div class="card-text pb-2"><strong>Tipo di prodotto: </strong><?= $product->type ?></div>
+                                        <!-- Conditionals -->
                                         <?php if ($product instanceof Food) : ?>
                                             <div class="card-text pb-2"><strong>Gusto: </strong><?= $product->flavour ?></div>
                                             <div class="card-text"><strong>Scadenza: </strong><?= $product->expiration ?></div>
