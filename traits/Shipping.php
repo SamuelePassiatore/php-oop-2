@@ -26,6 +26,6 @@ trait Shipping
     //Getter method for shipping cost
     public function getShippingCost()
     {
-        return $this->shippingCost;
+        return "€ " . number_format($this->shippingCost, 2);
     }
 }
